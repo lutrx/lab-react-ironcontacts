@@ -31,6 +31,13 @@ function App() {
     setContacts(sortedContactsPopularity);
   }
 
+  const deleteContact = (contactId) => {
+    const filteredContacts = contacts.filter(contact => {
+      return contact.id !== contactId;
+    });
+    setContacts(filteredContacts);
+  }
+
   return (
     <div className="App">
       <h2>IronContacts</h2>
@@ -55,6 +62,9 @@ function App() {
             <th>
               <h3>Won Emmy</h3>
             </th>
+            <th>
+              <h3>Actions</h3>
+            </th>
           </tr>
         </thead>
         <tbody>
@@ -75,6 +85,9 @@ function App() {
               </td>
               <td>
                 {contact.wonEmmy ? '🏆' : ''}
+              </td>
+              <td>
+                <button onClick={() => deleteContact(contact.id)} className="btn-delete">Delete</button>
               </td>
             </tr>
           )
