@@ -5,15 +5,26 @@ import { useState } from "react";
 
 
 function App() {
-  const [contacts, setContacts] = useState(contactsJSON.filter((contact, index) => {
-    if (index < 5) {
-      return contact;
-    }
-  }));
+  const firstFive = contactsJSON.slice(0, 5);
+  const [contacts, setContacts] = useState(firstFive);
+  
+
+  const addRandomContact = () => {
+    setContacts((prevContacts) => {
+      const newArray = contactsJSON.filter((contact) => {
+        return !prevContacts.includes(contact)
+      })
+    
+      const randomContact = newArray[Math.floor(Math.random() * newArray.length)];
+      const contactsWithRandom = [...prevContacts, randomContact];
+      return contactsWithRandom;
+    })
+  }
 
   return (
     <div className="App">
       <h2>IronContacts</h2>
+      <button onClick={() => addRandomContact()} className="btn-add">Add Random Contact</button>
       <table>
         <thead>
           <tr>
