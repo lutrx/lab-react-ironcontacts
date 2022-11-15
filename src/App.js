@@ -10,6 +10,7 @@ function App() {
       return contact;
     }
   }));
+
   return (
     <div className="App">
       <h2>IronContacts</h2>
@@ -25,6 +26,12 @@ function App() {
             <th>
               <h3>Popularity</h3>
             </th>
+            <th>
+              <h3>Won Oscar</h3>
+            </th>
+            <th>
+              <h3>Won Emmy</h3>
+            </th>
           </tr>
         </thead>
         <tbody>
@@ -39,6 +46,12 @@ function App() {
               </td>
               <td>
                 <p>{contact.popularity}</p>
+              </td>
+              <td>
+                {contact.wonOscar ? '🏆' : ''}
+              </td>
+              <td>
+                {contact.wonEmmy ? '🏆' : ''}
               </td>
             </tr>
           )
