@@ -44,9 +44,9 @@ function App() {
       <button onClick={() => addRandomContact()} className="btn-add">Add Random Contact</button>
       <button onClick={sortByPopularity} className="btn-sort-pop">Sort by popularity</button>
       <button onClick={sortByName} className="btn-sort-name">Sort by name</button>
-      <table>
-        <thead>
-          <tr>
+      <table className='table'>
+        <thead className='table-head'>
+          <tr className='table-row-head'>
             <th>
               <h3>Picture</h3>
             </th>

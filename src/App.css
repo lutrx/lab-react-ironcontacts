@@ -2,6 +2,21 @@
   text-align: center;
 }
 
+.App > h2 {
+  font-size: 50px;
+}
+
+.table-head {
+  font-size: 30px;
+}
+
+.table-row-head > th {
+  padding-left: 2%;
+  padding-right: 2%;
+  width:fit-content;
+}
+
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
